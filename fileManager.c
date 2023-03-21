@@ -4,11 +4,12 @@
 #include "signal.h"
 #include "fileManager.h"
 
+#define FILELOCATION "C:\\Users\\artur\\OneDrive\\Repos\\C\\signalProcessing\\generatedSignals\\signal.CSV"
 
 void writeCSV(int N, float *resultY, float *resultX)
 {
     FILE* waveform;
-    waveform = fopen("C:\\Users\\artur\\OneDrive\\Repos\\C\\signalProcessing\\generatedSignals\\signal.CSV","w+");
+    waveform = fopen(FILELOCATION,"w+");
     char newLine []= {"\n"};
 
     if (waveform == NULL)
@@ -35,9 +36,8 @@ void writeCSV(int N, float *resultY, float *resultX)
 void readCSV(float **resultX, float **resultY, int *amountOfAxisElements)
 {
      FILE* waveform;
-    waveform = fopen("C:\\Users\\artur\\OneDrive\\Repos\\C\\signalProcessing\\generatedSignals\\signal.CSV","r");
-    // char newLine []= {"\n"}; 
-    // char searchNewLine = {'/X'};
+    waveform = fopen(FILELOCATION,"r");
+
     int i = 0;
     int A;
     float *reallocBuffer= NULL;

@@ -1,3 +1,6 @@
+*.json
+*.code-workspace
+
 # Prerequisites
 *.d
 
